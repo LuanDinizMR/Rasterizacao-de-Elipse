@@ -5,14 +5,15 @@ import matplotlib.pyplot as plt
 def plot_pixel(x, y):
     # 's' = abreviação de square
     #marksize = tamanho do pixel
-    plt.plot(x, y, marker='s', markersize=10, color='black')
+    plt.plot(x, y, marker='s', markersize=20, color='black')
     
 def rasterizacao_elipse(a, b,h=0,k=0): 
 #h e k = 0 caso não seja passado nenhum parametro
 
     for angulo in range (361):
         #radians transforma de graus para radianos
-        plot_pixel(a*cos(radians(angulo))+h, b*sin(radians(angulo))+k)
+        plot_pixel(round(a*cos(radians(angulo))+h), round(b*sin(radians(angulo))+k))
+        #plot_pixel(a*cos(radians(angulo))+h, b*sin(radians(angulo))+k)
     
     plt.title("Rasterização de Elipse")    
     plt.show()
